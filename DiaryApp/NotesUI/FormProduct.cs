@@ -29,18 +29,25 @@ namespace DiaryApp.NotesUI
                 textBoxTime9, textBoxEvent9, textBoxNote9
             };
 
-            for (int i = 0; i < textBoxes.Length; i++)
-            { 
-                if(Days.DaysArray[Days.CurrentIndex].Schedule[i] != "" && Days.DaysArray[Days.CurrentIndex].Schedule[i] != null)
-                    textBoxes[i].Text = Days.DaysArray[Days.CurrentIndex].Schedule[i];
+            int timeTextBoxWidth = textBoxTime1.Width;
+            int eventTextBoxWidth = textBoxEvent1.Width;
+            int noteTextBoxWidth = textBoxNote1.Width;
 
-                if (textBoxes[i].Size.Width == textBoxTime1.Size.Width && textBoxes[i].Text != "")
+            for (int i = 0; i < textBoxes.Length; i++)
+            {
+                if (Days.GetScheduleItem(i) != "" && Days.GetScheduleItem(i) != null)
+                    textBoxes[i].Text = Days.GetScheduleItem(i);
+
+                if (((string[])textBoxes[i].Lines).Length > 1)
+                    textBoxes[i].ScrollBars = ScrollBars.Vertical;
+
+                if (textBoxes[i].Size.Width == timeTextBoxWidth && textBoxes[i].Text != "")
                     textBoxes[i].ForeColor = Color.FromArgb(20, 20, 20);
             }
 
             foreach (TextBox textBox in textBoxes)
             {
-                if (textBox.Size.Width == textBoxTime1.Size.Width)
+                if (textBox.Size.Width == timeTextBoxWidth)
                 {
                     if (!TimeIsValid(textBox, false))
                     {
@@ -95,7 +102,7 @@ namespace DiaryApp.NotesUI
 
                 }
 
-                if (textBox.Size.Width == textBoxEvent1.Size.Width)
+                if (textBox.Size.Width == eventTextBoxWidth)
                 {
                     textBox.TextChanged += (sender, e) =>
                     {
@@ -121,7 +128,7 @@ namespace DiaryApp.NotesUI
                     };
                 }
 
-                if (textBox.Size.Width == textBoxNote1.Size.Width)
+                if (textBox.Size.Width == noteTextBoxWidth)
                 {
                     textBox.MouseDoubleClick += (sender, e) => { ExpandLine(sender); };
 
@@ -138,17 +145,14 @@ namespace DiaryApp.NotesUI
 
                     textBox.KeyDown += (sender, e) =>
                     {
-                        if (e.Shift && e.KeyCode == Keys.Enter)
-                        {
-                            textBox.Text += "\r\n";
-                            textBox.ScrollBars = ScrollBars.Vertical;
-                            textBox.SelectionStart = textBox.Text.Length;
-                            e.SuppressKeyPress = true;
-                        }
-                        else if (e.KeyCode == Keys.Enter)
+                        if (!e.Shift && e.KeyCode == Keys.Enter)
                         {
                             e.SuppressKeyPress = true;
                             FocusNext(textBox, textBoxes);
+                        }
+                        else if (e.Shift && e.KeyCode == Keys.Enter)
+                        {
+                            textBox.SelectionStart = textBox.Text.Length;
                         }
                     };
 
@@ -160,8 +164,10 @@ namespace DiaryApp.NotesUI
 
                     textBox.TextChanged += (sender, e) =>
                     {
-                        if (((string[])textBox.Lines).Length > 1)
+                        if (textBox.Text.Length > 97)
                             textBox.ScrollBars = ScrollBars.Vertical;
+                        else
+                            textBox.ScrollBars = ScrollBars.None;
                         SaveData(sender);
                     };
                 }

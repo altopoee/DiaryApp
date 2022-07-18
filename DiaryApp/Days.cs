@@ -34,5 +34,10 @@ namespace DiaryApp
         public static Days sunday = new (DayOfWeek.Sunday);
 
         public static Days[] DaysArray = { monday, tuesday, wednesday, thursday, friday, saturday, sunday };
+
+        public static string GetScheduleItem(int index)
+        {
+            return DaysArray[CurrentIndex].Schedule[index];
+        }
     }
 }

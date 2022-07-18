@@ -164,7 +164,7 @@ namespace DiaryApp.NotesUI
 
                     textBox.TextChanged += (sender, e) =>
                     {
-                        if (textBox.Text.Length > 97 || textBox.Lines.Count() > 1)
+                        if (textBox.Text.Length > 97)
                             textBox.ScrollBars = ScrollBars.Vertical;
                         else
                             textBox.ScrollBars = ScrollBars.None;

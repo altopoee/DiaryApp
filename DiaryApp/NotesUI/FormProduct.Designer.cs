@@ -434,7 +434,6 @@
             this.textBoxNote1.Name = "textBoxNote1";
             this.textBoxNote1.Size = new System.Drawing.Size(497, 25);
             this.textBoxNote1.TabIndex = 59;
-            this.textBoxNote1.WordWrap = false;
             // 
             // textBoxNote2
             // 
@@ -446,7 +445,6 @@
             this.textBoxNote2.Name = "textBoxNote2";
             this.textBoxNote2.Size = new System.Drawing.Size(497, 25);
             this.textBoxNote2.TabIndex = 60;
-            this.textBoxNote2.WordWrap = false;
             // 
             // textBoxNote3
             // 
@@ -458,7 +456,6 @@
             this.textBoxNote3.Name = "textBoxNote3";
             this.textBoxNote3.Size = new System.Drawing.Size(497, 25);
             this.textBoxNote3.TabIndex = 61;
-            this.textBoxNote3.WordWrap = false;
             // 
             // textBoxNote4
             // 
@@ -470,7 +467,6 @@
             this.textBoxNote4.Name = "textBoxNote4";
             this.textBoxNote4.Size = new System.Drawing.Size(497, 25);
             this.textBoxNote4.TabIndex = 62;
-            this.textBoxNote4.WordWrap = false;
             // 
             // textBoxNote5
             // 
@@ -482,7 +478,6 @@
             this.textBoxNote5.Name = "textBoxNote5";
             this.textBoxNote5.Size = new System.Drawing.Size(497, 25);
             this.textBoxNote5.TabIndex = 63;
-            this.textBoxNote5.WordWrap = false;
             // 
             // textBoxNote6
             // 
@@ -494,7 +489,6 @@
             this.textBoxNote6.Name = "textBoxNote6";
             this.textBoxNote6.Size = new System.Drawing.Size(497, 25);
             this.textBoxNote6.TabIndex = 64;
-            this.textBoxNote6.WordWrap = false;
             // 
             // textBoxNote7
             // 
@@ -506,7 +500,6 @@
             this.textBoxNote7.Name = "textBoxNote7";
             this.textBoxNote7.Size = new System.Drawing.Size(497, 25);
             this.textBoxNote7.TabIndex = 65;
-            this.textBoxNote7.WordWrap = false;
             // 
             // textBoxNote8
             // 
@@ -518,7 +511,6 @@
             this.textBoxNote8.Name = "textBoxNote8";
             this.textBoxNote8.Size = new System.Drawing.Size(497, 25);
             this.textBoxNote8.TabIndex = 66;
-            this.textBoxNote8.WordWrap = false;
             // 
             // textBoxNote9
             // 
@@ -530,7 +522,6 @@
             this.textBoxNote9.Name = "textBoxNote9";
             this.textBoxNote9.Size = new System.Drawing.Size(497, 25);
             this.textBoxNote9.TabIndex = 67;
-            this.textBoxNote9.WordWrap = false;
             // 
             // labelError
             // 
